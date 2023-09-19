@@ -1,3 +1,4 @@
+
 public class CreditCard {
 
     private String customer; // name of the customer (e.g., ”John Bowman”)
@@ -12,10 +13,10 @@ public class CreditCard {
 
     public CreditCard(String cust, String bk, String acnt, int lim, double initialBal) {
         customer = cust;
-   bank = bk;
-     account = acnt;
+        bank = bk;
+        account = acnt;
         limit = lim;
-      balance = initialBal;
+        balance = initialBal;
 
     }
 
@@ -23,7 +24,6 @@ public class CreditCard {
         this(cust, bk, acnt, lim, 0.0); // use a balance of zero as default
 
     }
-
 
     public String getCustomer() {
         return customer;
@@ -33,58 +33,51 @@ public class CreditCard {
         return bank;
     }
 
-
     public String getAccount() {
         return account;
     }
-
 
     public int getLimit() {
         return limit;
     }
 
-
     public double getBalance() {
         return balance;
     }
 
-
     public boolean charge(double price) { // make a charge
-         if (price + balance > limit) // if charge would surpass limit
+        if (price + balance > limit) // if charge would surpass limit
             return false; // refuse the charge
-         // at this point, the charge is successful
-       balance += price; // update the balance
+        // at this point, the charge is successful
+        balance += price; // update the balance
         return true; // announce the good news
 
     }
 
-
     public void makePayment(double amount) { // make a payment
-       balance -= amount;
+        balance -= amount;
 
     }
-
 
     public static void printSummary(CreditCard card) {
-         System.out.println("Customer = " + card.customer);
+        System.out.println("Customer = " + card.customer);
         System.out.println("Bank = " + card.bank);
         System.out.println("Account = " + card.account);
-         System.out.println("Balance = " + card.balance); // implicit cast
-         System.out.println("Limit = " + card.limit); // implicit cast
+        System.out.println("Balance = " + card.balance); // implicit cast
+        System.out.println("Limit = " + card.limit); // implicit cast
 
     }
 
-    public String toString(){
+    public String toString() {
 
-        return " customer " + this.customer + "\n"+
-                "bank " + this.bank +"\n"+
-                "account " + this.account +"\n"+
-                "balance " + this.balance  +"\n"+
-                "limit " + this.balance  ;
+        return " customer " + this.customer + "\n" +
+                "bank " + this.bank + "\n" +
+                "account " + this.account + "\n" +
+                "balance " + this.balance + "\n" +
+                "limit " + this.balance;
     }
 
     public static void main(String[] args) {
-
 
         CreditCard[] wallet = new CreditCard[3];
         wallet[0] = new CreditCard("John Bowman", "California Savings",
@@ -95,8 +88,8 @@ public class CreditCard {
                 "5391 0375 9387 5309", 2500, 300);
 
         for (int val = 1; val <= 16; val++) {
-            wallet[0].charge(3*val);
-            wallet[1].charge(2*val);
+            wallet[0].charge(3 * val);
+            wallet[1].charge(2 * val);
             wallet[2].charge(val);
         }
 
@@ -108,9 +101,5 @@ public class CreditCard {
             }
         }
 
-
     }
 }
-
-
-

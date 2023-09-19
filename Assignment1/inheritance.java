@@ -1,3 +1,4 @@
+
 class A {
     int x = 1;
 
@@ -56,6 +57,7 @@ class C extends B {
     public int superDuperGetIt() {
         return super.superGetIt();
     }
+
     public static void main(String[] args) {
         C c = new C();
         c.superDuperSetIt(4);
@@ -66,13 +68,12 @@ class C extends B {
 
 }
 
-
 // System.out.println("C’s is " + c.getIt()); prints the value of C's x,
 // which is 3 because it's from class C.
 //
-//System.out.println("B’s is " + c.superGetIt()); prints the value of B's x
+// System.out.println("B’s is " + c.superGetIt()); prints the value of B's x
 // , which is 2 because it's from class B.
 //
-//System.out.println("A’s is " + c.superDuperGetIt()); prints the
+// System.out.println("A’s is " + c.superDuperGetIt()); prints the
 // value of A's x, which is 4 because it was set by superDuperSetIt(4)
 // other wise it would be 1
