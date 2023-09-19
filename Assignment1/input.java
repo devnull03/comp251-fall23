@@ -7,12 +7,13 @@ public class input {
         System.out.print("Enter a integer: ");
         int interger = sc.nextInt();
 
-        if (interger%2==0){
-            System.out.println(interger+" is even");
+        if (interger % 2 == 0) {
+            System.out.println(interger + " is even");
+        } else {
+            System.out.println(interger + " is odd");
         }
-        else {
-            System.out.println(interger+" is odd");
-        }
+
+        sc.close();
 
     }
 }
