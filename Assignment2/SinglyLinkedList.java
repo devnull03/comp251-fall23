@@ -1,29 +1,5 @@
 package Assignment2;
 
-/*
- * Copyright 2014, Michael T. Goodrich, Roberto Tamassia, Michael H. Goldwasser
- *
- * Developed for use with the book:
- *
- *    Data Structures and Algorithms in Java, Sixth Edition
- *    Michael T. Goodrich, Roberto Tamassia, and Michael H. Goldwasser
- *    John Wiley & Sons, 2014
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-// package net.datastructures;
-
 /**
  * A basic singly linked list implementation.
  *
@@ -173,14 +149,9 @@ public class SinglyLinkedList<E> implements Cloneable {
      * 
      * @param e the new element to add
      */
-    public void addLast(E e) { // adds element e to the end of the list
-        // Node<E> newest = new Node<>(e, null); // node will eventually be the tail
-        // if (isEmpty())
-        // head = newest; // special case: previously empty list
-        // else
-        // tail.setNext(newest); // new node after existing tail
-        // tail = newest; // new node becomes the tail
-        // size++;
+    public void addLast(E e) {
+
+        // Task 2 here ----
 
         if (isEmpty()) {
             addFirst(e);
@@ -254,6 +225,8 @@ public class SinglyLinkedList<E> implements Cloneable {
     }
 
     public String toString() {
+
+        // Task 1 here ----
         String sb = "(";
         Node<E> walk = head;
         while (walk != null) {
