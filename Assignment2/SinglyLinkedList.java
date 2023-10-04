@@ -155,19 +155,42 @@ public class SinglyLinkedList<E> implements Cloneable {
         size++;
     }
 
+    private void add_after_predecessor(E e, Node<E> predecessor) {
+        // Implement and add a new method which adds a new node of type ‘E’ after a
+        // given predecessor (provided in a parameter)
+
+        Node<E> newest = new Node<>(e, predecessor.getNext());
+
+        if (predecessor.getNext() == null) {
+            tail = newest;
+        }
+
+        predecessor.setNext(newest);
+
+        size++;
+    }
+
     /**
      * Adds an element to the end of the list.
      * 
      * @param e the new element to add
      */
     public void addLast(E e) { // adds element e to the end of the list
-        Node<E> newest = new Node<>(e, null); // node will eventually be the tail
-        if (isEmpty())
-            head = newest; // special case: previously empty list
-        else
-            tail.setNext(newest); // new node after existing tail
-        tail = newest; // new node becomes the tail
-        size++;
+        // Node<E> newest = new Node<>(e, null); // node will eventually be the tail
+        // if (isEmpty())
+        // head = newest; // special case: previously empty list
+        // else
+        // tail.setNext(newest); // new node after existing tail
+        // tail = newest; // new node becomes the tail
+        // size++;
+
+        // use the add_after_predecessor method
+        if (isEmpty()) {
+            addFirst(e);
+        } else {
+            add_after_predecessor(e, tail);
+        }
+
     }
 
     /**
@@ -234,27 +257,27 @@ public class SinglyLinkedList<E> implements Cloneable {
     }
 
     public String toString() {
-        StringBuilder sb = new StringBuilder("(");
+        String sb = "(";
         Node<E> walk = head;
         while (walk != null) {
-            sb.append(walk.getElement());
+            sb += walk.getElement();
             if (walk != tail)
-                sb.append(", ");
+                sb += ", ";
             walk = walk.getNext();
         }
-        sb.append(")");
-        return sb.toString();
+        sb += ")";
+        return sb;
     }
 
     public static void main(String[] args) {
 
         // Task 1 here ----
         SinglyLinkedList list = new SinglyLinkedList<>();
+        list.addFirst("Hello");
         list.addFirst(1);
         list.addFirst(2);
         list.addFirst(3);
-        list.addFirst("Hello");
-        list.addFirst("World");
+        list.addLast("World");
 
         System.out.println(list.toString());
     }
