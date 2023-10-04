@@ -156,8 +156,6 @@ public class SinglyLinkedList<E> implements Cloneable {
     }
 
     private void add_after_predecessor(E e, Node<E> predecessor) {
-        // Implement and add a new method which adds a new node of type ‘E’ after a
-        // given predecessor (provided in a parameter)
 
         Node<E> newest = new Node<>(e, predecessor.getNext());
 
@@ -184,7 +182,6 @@ public class SinglyLinkedList<E> implements Cloneable {
         // tail = newest; // new node becomes the tail
         // size++;
 
-        // use the add_after_predecessor method
         if (isEmpty()) {
             addFirst(e);
         } else {
